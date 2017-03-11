@@ -34,7 +34,10 @@ import javax.xml.bind.annotation.XmlType;
 public class Response {
 
     @XmlElement(required = true)
-    protected double result;
+    protected int result;
+
+    @XmlElement(required = true)
+    protected int rides;
 
     /**
      * Gets the value of the result property.
@@ -56,8 +59,16 @@ public class Response {
      *     {@link BigInteger }
      *     
      */
-    public void setResult(double value) {
+    public void setResult(int value) {
         this.result = value;
+    }
+
+    public int getRides() {
+        return rides;
+    }
+
+    public void setRides(int rides) {
+        this.rides = rides;
     }
 
 }

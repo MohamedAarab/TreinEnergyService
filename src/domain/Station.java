@@ -27,6 +27,10 @@ public class Station {
         return total;
     }
 
+    public int getTotalRides() {
+        return allRides.size();
+    }
+
 
 
 

@@ -6,6 +6,7 @@
   <xs:complexType name="response">
     <xs:all minOccurs="1">
       <xs:element name="result" type="xs:integer" />
+      <xs:element name="rides" type="xs:integer" />
 	</xs:all>
   </xs:complexType>
 </xs:schema> 

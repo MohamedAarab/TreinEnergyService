@@ -28,6 +28,7 @@ public class TrainServiceImpl implements WSInterface {
         int result = station.getTotalEnergyConsumption(request.getHours());
 //        BigInteger actualResult = BigInteger.valueOf(result);
         response.setResult(result);
+        response.setRides(station.getTotalRides());
         return response;
     }
 
