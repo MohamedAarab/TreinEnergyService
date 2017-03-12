@@ -9,16 +9,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for response complex type.
+ * <p>Java class for totalridesResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="response">
+ * &lt;complexType name="totalridesResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;all>
- *         &lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+ *         &lt;element name="total" type="{http://www.w3.org/2001/XMLSchema}integer"/>
  *       &lt;/all>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,58 +28,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "response", propOrder = {
+@XmlType(name = "totalridesResponse", propOrder = {
 
 })
-public class Response {
+public class TotalridesResponse {
 
     @XmlElement(required = true)
-    protected int result;
-
-    @XmlElement(required = true)
-    protected int rides;
-
-    @XmlElement(required = false)
-    protected String message;
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
+    protected int total;
 
     /**
-     * Gets the value of the result property.
+     * Gets the value of the total property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public double getResult() {
-        return result;
+    public int getTotal() {
+        return this.total;
     }
 
     /**
-     * Sets the value of the result property.
+     * Sets the value of the total property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setResult(int value) {
-        this.result = value;
-    }
-
-    public int getRides() {
-        return rides;
-    }
-
-    public void setRides(int rides) {
-        this.rides = rides;
+    public void setTotal(int value) {
+        this.total = value;
     }
 
 }

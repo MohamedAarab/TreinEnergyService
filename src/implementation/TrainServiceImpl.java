@@ -25,10 +25,17 @@ public class TrainServiceImpl implements WSInterface {
         Ride ride2 = new Ride(5, 220, train2);
         station.addRide(ride1);
         station.addRide(ride2);
-        int result = station.getTotalEnergyConsumption(request.getHours());
+        if(request.getHours() == 0) {
+            response.setMessage("U dient een geldige invoer in te vullen");
+            response.setResult(0);
+            response.setRides(station.getTotalRides());
+        } else {
+            int result = station.getTotalEnergyConsumption(request.getHours());
 //        BigInteger actualResult = BigInteger.valueOf(result);
-        response.setResult(result);
-        response.setRides(station.getTotalRides());
+            response.setResult(result);
+            response.setRides(station.getTotalRides());
+        }
+
         return response;
     }
 
