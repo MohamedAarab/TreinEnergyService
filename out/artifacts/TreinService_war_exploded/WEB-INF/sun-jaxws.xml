@@ -2,7 +2,7 @@
 
 <endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
     <endpoint
-            name='HelloWorld'
+            name='TreinService'
             implementation='implementation.TrainServiceImpl'
-            url-pattern='/services/HelloWorld'/>
+            url-pattern='/TreinService'/>
 </endpoints>

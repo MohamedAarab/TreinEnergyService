@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://mohamed.nl/treinservice/request/"
+  targetNamespace="http://mohamed.nl/treinservice/request/">
+
+    <!-- There can only be one of the stations defined below. This element is used as a parameter for multiple operations within the service -->
+    <xs:element name="station">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Utrecht Centraal" />
+                <xs:enumeration value="Amsterdam Centraal" />
+                <xs:enumeration value="Rotterdam Centraal" />
+                <xs:enumeration value="Limburg Centraal" />
+                <xs:enumeration value="Brabant Centraal" />
+                <xs:enumeration value="Leiden Centraal" />
+                <xs:enumeration value="Den Haag Centraal" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- Both parameters have to be filled in order to fullfill this element. This element is used as a parameter for one operation within the service -->
+    <xs:element name="station-hours">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" name="station" type="xs:string"/>
+                <xs:element minOccurs="1" name="hours" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+</xs:schema> 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://mohamed.nl/treinservice/error/">
+
+    <!-- Element to store the error in when it goes wrong. -->
+    <xs:element name="error" type="xs:string" />
+
+</xs:schema>

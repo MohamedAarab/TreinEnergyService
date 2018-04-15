@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://mohamed.nl/treinservice/response/">
+
+  <xs:element name="rides" type="xs:string" />
+  <xs:element name="totalrides" type="xs:int" />
+  <xs:element name="energy" type="xs:int" />
+
+</xs:schema> 

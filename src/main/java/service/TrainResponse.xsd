@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://mohamed.nl/treinservice/response/">
+
+    <!-- The elements below are used to specify what type of response is expected once the request has been made. These don't need complex constraints as they can be almost anything. Only the type is specified. -->
+  <xs:element name="rides" type="xs:string" />
+  <xs:element name="stationed-trains" type="xs:string" />
+  <xs:element name="totalrides" type="xs:int" />
+  <xs:element name="energy" type="xs:int" />
+
+</xs:schema> 

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://mohamed.nl/treinservice/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:req="http://mohamed.nl/treinservice/request/"
+                  xmlns:rsp="http://mohamed.nl/treinservice/response/"
+                  xmlns:err="http://mohamed.nl/treinservice/error/"
+                  targetNamespace="http://mohamed.nl/treinservice/" name="TreinService">
+
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://mohamed.nl/treinservice/"
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://mohamed.nl/treinservice/request/" schemaLocation="TrainRequest.xsd"/>
+            <xsd:import namespace="http://mohamed.nl/treinservice/response/" schemaLocation="TrainResponse.xsd"/>
+            <xsd:import namespace="http://mohamed.nl/treinservice/error/" schemaLocation="TrainError.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+
+    <!-- getTotalRides -->
+    <wsdl:message name="getTotalRidesRequest">
+        <wsdl:part name="station" element="req:station"/>
+    </wsdl:message>
+
+    <wsdl:message name="getTotalRidesResponse">
+        <wsdl:part name="total" element="rsp:totalrides"/>
+    </wsdl:message>
+
+    <wsdl:message name="getTotalRidesError">
+        <wsdl:part name="error" element="err:error"/>
+    </wsdl:message>
+
+    <!-- getTotalEnergyConsumption -->
+    <wsdl:message name="getTotalEnergyConsumptionRequest">
+        <wsdl:part name="station" element="req:station"/>
+    </wsdl:message>
+
+    <wsdl:message name="getTotalEnergyConsumptionResponse">
+        <wsdl:part name="total-energy" element="rsp:energy"/>
+    </wsdl:message>
+
+    <wsdl:message name="getTotalEnergyConsumptionError">
+        <wsdl:part name="error" element="err:error"/>
+    </wsdl:message>
+
+    <!-- getTotalEnergyConsumptionPerHour -->
+    <wsdl:message name="getTotalEnergyConsumptionPerHourRequest">
+        <wsdl:part name="station" element="req:station"/>
+    </wsdl:message>
+
+    <wsdl:message name="getTotalEnergyConsumptionPerHourResponse">
+        <wsdl:part name="energy-per-hour" element="rsp:energy"/>
+    </wsdl:message>
+
+    <wsdl:message name="getTotalEnergyConsumptionPerHourError">
+        <wsdl:part name="error" element="err:error"/>
+    </wsdl:message>
+
+    <!-- getTotalEnergyConsumptionPerHour -->
+    <wsdl:message name="getTotalEnergyConsumptionHourRequest">
+        <wsdl:part name="station" element="req:station-hours"/>
+    </wsdl:message>
+
+    <wsdl:message name="getTotalEnergyConsumptionHourResponse">
+        <wsdl:part name="energy-per-hour" element="rsp:energy"/>
+    </wsdl:message>
+
+    <wsdl:message name="getTotalEnergyConsumptionHourError">
+        <wsdl:part name="error" element="err:error"/>
+    </wsdl:message>
+
+
+    <!-- getStationedTrains -->
+    <wsdl:message name="getStationedTrainsRequest">
+        <wsdl:part name="station" element="req:station"/>
+    </wsdl:message>
+
+    <wsdl:message name="getStationedTrainsResponse">
+        <wsdl:part name="stationed-trains" element="rsp:stationed-trains"/>
+    </wsdl:message>
+
+    <wsdl:message name="getStationedTrainsError">
+        <wsdl:part name="error" element="err:error"/>
+    </wsdl:message>
+
+
+    <!-- getAllRides -->
+    <wsdl:message name="getAllRidesRequest">
+        <wsdl:part name="station" element="req:station"/>
+    </wsdl:message>
+
+    <wsdl:message name="getAllRidesResponse">
+        <wsdl:part name="stations" element="rsp:rides"/>
+    </wsdl:message>
+
+    <wsdl:message name="getAllRidesError">
+        <wsdl:part name="error" element="err:error"/>
+    </wsdl:message>
+
+
+    <wsdl:portType name="TrainPortType">
+        <wsdl:operation name="getTotalRides">
+            <wsdl:input message="tns:getTotalRidesRequest"/>
+            <wsdl:output message="tns:getTotalRidesResponse"/>
+            <wsdl:fault name="error" message="tns:getTotalRidesError"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="getTotalEnergyConsumption">
+            <wsdl:input message="tns:getTotalEnergyConsumptionRequest"/>
+            <wsdl:output message="tns:getTotalEnergyConsumptionResponse"/>
+            <wsdl:fault name="error" message="tns:getTotalEnergyConsumptionError"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="getTotalEnergyConsumptionPerHour">
+            <wsdl:input message="tns:getTotalEnergyConsumptionPerHourRequest"/>
+            <wsdl:output message="tns:getTotalEnergyConsumptionPerHourResponse"/>
+            <wsdl:fault name="error" message="tns:getTotalEnergyConsumptionPerHourError"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="getTotalEnergyConsumptionHour">
+            <wsdl:input message="tns:getTotalEnergyConsumptionHourRequest"/>
+            <wsdl:output message="tns:getTotalEnergyConsumptionHourResponse"/>
+            <wsdl:fault name="error" message="tns:getTotalEnergyConsumptionHourError"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="getAllRides">
+            <wsdl:input message="tns:getAllRidesRequest"/>
+            <wsdl:output message="tns:getAllRidesResponse"/>
+            <wsdl:fault name="error" message="tns:getAllRidesError"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="getStationedTrains">
+            <wsdl:input message="tns:getStationedTrainsRequest"/>
+            <wsdl:output message="tns:getStationedTrainsResponse"/>
+            <wsdl:fault name="error" message="tns:getStationedTrainsError"/>
+        </wsdl:operation>
+
+    </wsdl:portType>
+
+
+    <wsdl:binding name="TrainSOAP" type="tns:TrainPortType">
+        <soap:binding style="document"
+                      transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="getTotalRides">
+            <soap:operation soapAction="getTotalRides" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="error">
+                <soap:fault name="error" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="getTotalEnergyConsumption">
+            <soap:operation soapAction="getTotalEnergyConsumption" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="error">
+                <soap:fault name="error" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="getTotalEnergyConsumptionPerHour">
+            <soap:operation soapAction="getTotalEnergyConsumptionPerHour" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="error">
+                <soap:fault name="error" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="getTotalEnergyConsumptionHour">
+            <soap:operation soapAction="getTotalEnergyConsumptionHour" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="error">
+                <soap:fault name="error" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="getAllRides">
+            <soap:operation soapAction="getAllRides" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="error">
+                <soap:fault name="error" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="getStationedTrains">
+            <soap:operation soapAction="getStationedTrains" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="error">
+                <soap:fault name="error" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+    </wsdl:binding>
+
+
+    <wsdl:service name="TrainService">
+        <wsdl:port binding="tns:TrainSOAP" name="TrainServicePort">
+            <soap:address location="http://localhost:8090/TreinService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
